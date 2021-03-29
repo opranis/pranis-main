@@ -1,0 +1,29 @@
+{
+  "name": "pranis-main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve & postcss styles/tailwind.css --o _tmp/style.css --watch",
+    "prebuild": "rm -rf ./_site",
+    "build": "eleventy & NODE_ENV=production postcss styles/tailwind.css --o _site/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opranis/pranis-main.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/opranis/pranis-main/issues"
+  },
+  "homepage": "https://github.com/opranis/pranis-main#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.2.8",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.0.4"
+  }
+}
