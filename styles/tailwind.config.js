@@ -7,7 +7,17 @@ module.exports = {
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'sharetech': ['"Share Tech Mono"', 'monospace'],
+        'montserrat': ['Montserrat', 'sans-serif']
+      },
+      colors: {
+        neon: {
+          base: '#fadf0f',
+        },
+      },
+    },
   },
   variants: {
     extend: {},
