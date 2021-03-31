@@ -1,0 +1,13 @@
+---
+layout: layouts/default.njk
+---
+<div class="w-screen h-screen relative">
+    <div class="absolute inset-center md:inset-cancel md:inset-auto w-full md:w-auto md:m-10 text-center md:text-left">
+        <h1 class="font-sharetech text-5xl text-neon-base pb-5">oliver pranis</h1>
+        <h2 class="font-montserrat text-white">...is my name.</h2>
+    </div>
+    <canvas id="cubes" class="bg-black w-full h-full"></canvas>
+</div>
+<script>
+    {% include "scripts/cubes.js" %}
+</script>
