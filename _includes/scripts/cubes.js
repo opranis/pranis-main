@@ -34,8 +34,9 @@ function animate(t) {
     // let l = 400;
     // let gap = 3;
 
-    let l = elapsed/100;
-    let gap = 30 - elapsed/5000;
+    let l = 100 + elapsed/100; //length of a leaf
+    let gap = Math.abs(30 - elapsed/5000) + 5; //gap between the leaves
+    // let gap = 10; //gap between the leaves
 
     let h = l*Math.sin(Math.PI/3);
     let horiz_dist = h+gap;
