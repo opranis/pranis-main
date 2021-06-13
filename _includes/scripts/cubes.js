@@ -4,28 +4,17 @@ const resolution_multiplier = 4;
 
 const l = 300;
 const h = l*Math.sin(Math.PI/3);
-const gap = 0;
-const mouseRad = 500;
-const mouseRadMin = 0;
+const gap = 2;
+const mouseRad = 450;
+const mouseRadMin = 300;
 
-function drawGradient() {
-    // Create gradient from corner to corner
-    const grd = ctx.createLinearGradient(0, 0, c.width, c.height);
-    grd.addColorStop(0.8, "#fa6a0f");
-    // grd.addColorStop(1, "#a0fa0f");
-    // grd.addColorStop(0.5, "#9fe607");
-    grd.addColorStop(0.2, "#0791e6");
-    
-    // Fill all canvas with gradient
-    ctx.fillStyle = grd;
-    ctx.fillRect(0, 0, c.width, c.height);
-}
+const mass = 0.003;
 
 let mouseX = -1;
 let mouseY = -1;
 window.addEventListener("mousemove", function (e) {
-    mouseX = e.pageX * resolution_multiplier;
-    mouseY = e.pageY * resolution_multiplier;
+    mouseX = e.clientX * resolution_multiplier;
+    mouseY = e.clientY * resolution_multiplier;
 })
 
 let leaves;
@@ -36,7 +25,7 @@ function drawCubes() {
     c.width  = c.offsetWidth*resolution_multiplier;
     c.height = c.offsetHeight*resolution_multiplier;
 
-    drawGradient();
+    ctx.clearRect(0, 0, c.width, c.height);
 
     const horiz_dist = h+gap;
     const vert_dist = horiz_dist*Math.sin(Math.PI/3);
@@ -73,11 +62,11 @@ function animate(t) {
         prevFrame = t;
     }
     
-    drawGradient();
+    ctx.clearRect(0, 0, c.width, c.height);
     
     for (let i = 0; i < leaves.length; i++) {
         
-        leaves[i][3] += (pointerSize(leaves[i][0], leaves[i][1]) - leaves[i][3]) * 0.002 * elapsed;
+        leaves[i][3] += (pointerSize(leaves[i][0], leaves[i][1]) - leaves[i][3]) * mass * elapsed;
         leaves[i][3] = Math.min(1, leaves[i][3]);
 
         // finally, draw the leaf

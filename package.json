@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "eleventy --watch & postcss styles/tailwind.css --o _tmp/style.css --watch",
-    
+    "start": "eleventy --watch & postcss tailwind.css --o _tmp/style.css --watch",
     "prebuild": "rm -rf ./_site",
-    "build": "eleventy & NODE_ENV=production postcss styles/tailwind.css --o _site/style.css"
+    "build": "eleventy & NODE_ENV=production postcss tailwind.css --o _site/style.css"
   },
   "repository": {
     "type": "git",

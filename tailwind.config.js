@@ -1,11 +1,7 @@
 module.exports = {
   purge: {
     content: ['_site/**/*.html'],
-    options: {
-      safelist: [],
-    },
   },
-  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       fontFamily: {
@@ -13,10 +9,16 @@ module.exports = {
         'montserrat': ['Montserrat', 'sans-serif']
       },
       colors: {
-        neon: {
-          base: '#fadf0f',
+        my: {
+          yellow: '#fadf0f',
+          blue: '#0a7cff',
+          green: '#1fffdc',
+          orange: '#f45d01',
         },
       },
+      lineHeight: {
+        'default': 'normal',
+      }
     },
   },
   variants: {
