@@ -1,29 +1,32 @@
 const c = document.getElementById("cubes");
 const ctx = c.getContext("2d");
-const resolution_multiplier = 4;
+const resolution_multiplier = window.devicePixelRatio;
 
-const l = 300;
+const l = 75;
 const h = l*Math.sin(Math.PI/3);
-const gap = 2;
-const mouseRad = 450;
-const mouseRadMin = 300;
+const gap = 0.5;
+const mouseRad = 120;
+const mouseRadMin = 70;
 
 const mass = 0.003;
 
 let mouseX = -1;
 let mouseY = -1;
 window.addEventListener("mousemove", function (e) {
-    mouseX = e.clientX * resolution_multiplier;
-    mouseY = e.clientY * resolution_multiplier;
+    mouseX = e.clientX;
+    mouseY = e.clientY;
 })
+
+let anim;
 
 let leaves;
 window.addEventListener("resize", drawCubes); //redraw screen when it has been resized
 function drawCubes() {
     if (anim !== undefined) window.cancelAnimationFrame(anim);
 
-    c.width  = c.offsetWidth*resolution_multiplier;
-    c.height = c.offsetHeight*resolution_multiplier;
+    c.width  = Math.floor(c.offsetWidth*resolution_multiplier);
+    c.height = Math.floor(c.offsetHeight*resolution_multiplier);
+    ctx.scale(resolution_multiplier, resolution_multiplier);
 
     ctx.clearRect(0, 0, c.width, c.height);
 
@@ -49,12 +52,11 @@ function drawCubes() {
         }
     }
 
-    animate(); //start animation
+    anim = window.requestAnimationFrame(animate); //start animation
 }
 
 let prevFrame = 0;
 let elapsed = 0;
-let anim;
 function animate(t) {
 
     if (t !== undefined) {
