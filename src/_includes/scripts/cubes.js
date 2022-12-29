@@ -6,7 +6,7 @@ const l = 75;
 const h = l*Math.sin(Math.PI/3);
 const gap = 0.5;
 const mouseRad = 120;
-const mouseRadMin = 70;
+const mouseRadMin = 100;
 
 const mass = 0.003;
 

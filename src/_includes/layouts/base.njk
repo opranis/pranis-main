@@ -1,5 +1,6 @@
 ---
 title: Oliver Pranis
+bgClass: bg-black
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -11,12 +12,12 @@ title: Oliver Pranis
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="icon" href="_media/logo.png">
+    <link rel="stylesheet" href="/style.css"/>
+    <link rel="icon" href="/media/logo.png">
 
     <title>{{ title }}</title>
 </head>
-<body class="bg-black">
+<body class="{{ bgClass }}">
     {{content | safe}}
 </body>
 </html>

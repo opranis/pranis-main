@@ -12,6 +12,8 @@ module.exports = {
           blue: '#0a7cff',
           green: '#1fffdc',
           orange: '#f45d01',
+          darkgray: '#303841',
+          offwhite: '#F5F5F5'
         },
       },
       lineHeight: {
@@ -22,5 +24,7 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography')
+  ],
 }

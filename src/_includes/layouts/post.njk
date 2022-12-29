@@ -1,0 +1,20 @@
+---
+layout: layouts/blog.njk
+---
+<div class="max-w-prose m-auto py-14 font-montserrat">
+    {# <h1 class="text-4xl font-extrabold">{{ title }}</h1> #}
+    <h1 class="text-5xl font-extrabold mb-2">
+        <span class="bg-my-yellow text-gray-900 font-sharetech shadow-my-orange p-2 inline-block">Heading test</span>
+    </h1>
+
+    <div class="mb-7 text-lg">
+        Tags:
+        {%- for tag in tags | filterTags %}
+        <a class="font-sharetech hover:bg-my-yellow transition duration-200" href="/blog/tags/{{ tag | slugify }}/">[{{ tag }}]</a>
+        {%- endfor %}
+    </div>
+
+    <article class="prose max-w-none">
+    {{ content | safe }}
+    </article>
+</div>
