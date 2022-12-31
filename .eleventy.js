@@ -5,6 +5,7 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addPassthroughCopy({ '_tmp/style.css': 'style.css' });
     eleventyConfig.addPassthroughCopy({ 'src/_media': 'media' });
+    eleventyConfig.addPassthroughCopy('src/admin');
 
     const { minify } = require('terser');
     // this can be changed to a universal filter in 11ty 2.0
@@ -25,6 +26,14 @@ module.exports = function (eleventyConfig) {
         return (tags || []).filter(tag => ["all", "posts"].indexOf(tag) === -1);
     }
     eleventyConfig.addFilter("filterTags", filterTagList)
+
+    const { DateTime } = require('luxon');
+    eleventyConfig.addFilter("readableDate", dateObj => {
+        return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
+    });
+    eleventyConfig.addFilter('htmlDateString', (dateObj) => {
+        return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
+    });
 
     return {
         dir: {

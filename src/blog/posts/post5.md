@@ -4,6 +4,7 @@ tags:
     - tag3
 thumbnail: https://source.unsplash.com/random/?fantasy/
 # thumbnail: /media/img.jpg
+date: 2020-03-24
 ---
 # Heading 1
 

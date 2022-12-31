@@ -15,9 +15,24 @@ bgClass: bg-black
     <link rel="stylesheet" href="/style.css"/>
     <link rel="icon" href="/media/logo.png">
 
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
     <title>{{ title }}</title>
 </head>
 <body class="{{ bgClass }}">
+
     {{content | safe}}
+
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>
 </body>
 </html>
