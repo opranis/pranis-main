@@ -1,0 +1,9 @@
+---
+layout: layouts/base.njk
+---
+{{ content | safe }}
+<canvas id="cubes" class="bg-gradient-to-b md:bg-gradient-to-br from-my-green to-my-blue fixed top-0 w-full h-full -z-50"></canvas>
+<script>
+    {% set js %}{% include "scripts/cubes.js" %}{% endset %}
+    {{ js | jsmin | safe }}
+</script>

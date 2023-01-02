@@ -10,7 +10,7 @@ permalink: /blog/tags/{{ tag | slug }}/
 ---
 <div class="max-w-5xl m-auto space-y-5 py-5 px-2 font-montserrat" >
 
-    {% if tag != "posts" %}
+    {% if tag | filterTags | length %}
     <h1 class="text-4xl">Posts tagged as: <span class="font-sharetech">[{{ tag }}]</span></h1>
     {% endif %}
 
@@ -20,7 +20,7 @@ permalink: /blog/tags/{{ tag | slug }}/
     <hr class="border-1 border-my-darkgray">
 
     <div class="flex mx-auto flex-row">
-        <img class="shadow-my-yellow border-b-2 border-r-2 border-my-darkgray object-cover h-32 w-44 mx-6 sm:inline-block hidden" src="{{ post.data.thumbnail }}" alt="Post thumbnail image">
+        <img class="bg-my-darkgray shadow-my-yellow border-b-2 border-r-2 border-my-darkgray object-cover h-32 w-44 mx-6 sm:inline-block hidden" src="{{ post.data.thumbnail }}" alt="Post thumbnail image">
         <div class="flex flex-col justify-between">
             <div>
                 <h2 class="text-4xl font-sharetech">{{ post.data.title }}</h2>

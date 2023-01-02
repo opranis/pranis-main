@@ -23,6 +23,7 @@ module.exports = function (eleventyConfig) {
     });
 
     function filterTagList(tags) {
+        tags = Array.isArray(tags) ? tags : [tags];
         return (tags || []).filter(tag => ["all", "posts"].indexOf(tag) === -1);
     }
     eleventyConfig.addFilter("filterTags", filterTagList)

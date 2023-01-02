@@ -1,5 +1,5 @@
 ---
-layout: layouts/base.njk
+layout: layouts/cubes.njk
 ---
 <div class="m-10 space-y-5 text-center md:text-left relative z-10">
     <h1 class="pb-2 font-sharetech text-5xl text-black">
@@ -9,16 +9,21 @@ layout: layouts/base.njk
     </h1>
     {# <h2 class="font-montserrat text-black mb-20">
         <span class="bg-my-yellow decoration-clone p-1">
-            Hello there!<br>I like to explore things.
+            Hello there!<br>I like to make things.
         </span>
     </h2> #}
     <div>
-        <a href="https://youtu.be/dQw4w9WgXcQ" class="shadow-my-orange-none hover:shadow-my-orange cursor-pointer inline-block focus:outline-none transition duration-300 hover:bg-my-yellow hover:text-black border-my-yellow border-4 bg-black font-sharetech text-my-yellow text-lg p-2">
+        <a href="/about-me/" class="shadow-my-orange-none hover:shadow-my-orange cursor-pointer inline-block focus:outline-none transition duration-300 hover:bg-my-yellow hover:text-black border-my-yellow border-4 bg-black font-sharetech text-my-yellow text-lg p-2">
             about me
         </a>
     </div>
     <div>
-        <a href="blog/tags/posts" class="shadow-my-orange-none hover:shadow-my-orange cursor-pointer inline-block focus:outline-none transition duration-300 hover:bg-my-yellow hover:text-black border-my-yellow border-4 bg-black font-sharetech text-my-yellow text-lg p-2">
+        <a href="/blog/tags/projects/" class="shadow-my-orange-none hover:shadow-my-orange cursor-pointer inline-block focus:outline-none transition duration-300 hover:bg-my-yellow hover:text-black border-my-yellow border-4 bg-black font-sharetech text-my-yellow text-lg p-2">
+            projects
+        </a>
+    </div>
+    <div>
+        <a href="/blog/tags/posts/" class="shadow-my-orange-none hover:shadow-my-orange cursor-pointer inline-block focus:outline-none transition duration-300 hover:bg-my-yellow hover:text-black border-my-yellow border-4 bg-black font-sharetech text-my-yellow text-lg p-2">
             blog
         </a>
     </div>
@@ -40,8 +45,3 @@ layout: layouts/base.njk
         </a>
     </div>
 </div>
-<canvas id="cubes" class="bg-gradient-to-b md:bg-gradient-to-br from-my-green to-my-blue fixed top-0 w-full h-full"></canvas>
-<script>
-    {% set js %}{% include "scripts/cubes.js" %}{% endset %}
-    {{ js | jsmin | safe }}
-</script>

@@ -1,29 +1,32 @@
 ---
 layout: layouts/blog.njk
 ---
-<div class="absolute w-full h-96 -z-10 p-2">
-    <div class="overflow-hidden w-full h-full shadow-md shadow-my-darkgray">
+<div class="absolute w-full h-96 -z-10 p-2 hidden md:block">
+    <div class="overflow-hidden w-full h-full shadow-md shadow-my-darkgray bg-gray-300">
         <img class="blur-md w-full h-full object-cover object-center scale-125" src="{{ thumbnail }}" alt="Post blurred background thumbnail image">
     </div>
 </div>
-<img src="{{ thumbnail }}" alt="Post thumbnail image" class="shadow-md object-cover w-3/5 h-96 mt-6 mb-16 mx-auto rounded-md shadow-my-darkgray">
+<div class="px-6">
+    <img src="{{ thumbnail }}" alt="Post thumbnail image" class="bg-gray-600 shadow-md object-cover max-h-96 min-w-[40%] md:h-96 mt-6 md:mb-16 mb-8 mx-auto rounded-md shadow-my-darkgray" />
+</div>
 
-<div class="max-w-prose m-auto pb-14 font-montserrat">
-    
-    <h1 class="text-6xl font-extrabold mb-3">
-        <span class="bg-my-yellow text-gray-900 font-sharetech shadow-my-orange p-2 inline-block">Heading test</span>
-    </h1>
-    
-    <div class="mb-7 text-lg">
-        <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
-        <p>
-            {%- for tag in tags | filterTags %}
-            <a class="font-sharetech hover:bg-my-yellow transition duration-200" href="/blog/tags/{{ tag | slugify }}/">[{{ tag }}]</a>
-            {%- endfor %}
-        </p>
+<div class="mx-6 mb-14 drop">
+    <div class="max-w-prose m-auto font-montserrat">
+        <h1 class="text-6xl font-extrabold mb-3">
+            <span class="bg-my-yellow text-gray-900 font-sharetech shadow-my-orange p-2 inline-block">Heading test</span>
+        </h1>
+        
+        <div class="mb-7 text-lg">
+            <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+            <p>
+                {%- for tag in tags | filterTags %}
+                <a class="font-sharetech hover:bg-my-yellow transition duration-200" href="/blog/tags/{{ tag | slugify }}/">[{{ tag }}]</a>
+                {%- endfor %}
+            </p>
+        </div>
+
+        <article class="prose max-w-none prose-img:rounded-xl">
+        {{ content | safe }}
+        </article>
     </div>
-
-    <article class="prose max-w-none prose-img:rounded-xl">
-    {{ content | safe }}
-    </article>
 </div>
