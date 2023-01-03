@@ -9,6 +9,16 @@
 <body>
     <!-- Include the script that builds the page and powers Netlify CMS -->
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-    <script>CMS.registerPreviewStyle("/style.css");</script>
+    <script>
+        var PostPreview = createClass({
+            render: function(){
+                return h('div', {class: 'prose prose-img:rounded-xl font-montserrat mx-auto my-8'},
+                this.props.widgetFor('body'));
+            }
+        });
+
+        CMS.registerPreviewTemplate("posts", PostPreview);
+        CMS.registerPreviewStyle("/style.css");
+    </script>
 </body>
 </html>
