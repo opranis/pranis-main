@@ -2,12 +2,15 @@ backend:
   name: git-gateway
   branch: master
 
+publish_mode: editorial_workflow
+
 media_folder: "src/_media/post_images"
 public_folder: "/media/post_images"
 
 collections:
-  - name: "blog"
-    label: "Blog"
+  - name: "posts"
+    label: "Posts"
+    label_singular: "Post"
     folder: "src/blog/posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
