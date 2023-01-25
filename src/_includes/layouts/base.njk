@@ -7,7 +7,7 @@ bgClass: bg-black
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This is the personal site of Oliver Pranis.">
+    <meta name="description" content="This is the personal site of Oliver Pranis. Here you can find out more about me and my projects.">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Share+Tech+Mono&display=swap" rel="stylesheet">
@@ -24,6 +24,7 @@ bgClass: bg-black
     {{content | safe}}
 
     <script>
+        {% set js %}
         if (window.netlifyIdentity) {
             window.netlifyIdentity.on("init", user => {
                 if (!user) {
@@ -33,6 +34,8 @@ bgClass: bg-black
                 }
             });
         }
+        {% endset %}
+        {{ js | jsmin | safe }}
     </script>
 </body>
 </html>
