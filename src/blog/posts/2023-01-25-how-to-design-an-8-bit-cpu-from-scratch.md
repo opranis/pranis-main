@@ -1,6 +1,6 @@
 ---
 title: 8-bit CPU from scratch
-date: 2023-01-25T14:34:28.403Z
+date: 2022-03-19T14:34:28.403Z
 tags:
   - projects
 thumbnail: /media/post_images/logicgates.jpg
