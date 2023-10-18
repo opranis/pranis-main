@@ -3,5 +3,5 @@
   command = "npm run build"
 
 [build.environment]
-  NODE_VERSION = "v19.3.0"
-  NPM_VERSION = "9.2.0"
+  NODE_VERSION = "v20.8.1"
+  NPM_VERSION = "10.1.0"
