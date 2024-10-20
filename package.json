@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/opranis/pranis-main#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "^3.0.0",
     "@tailwindcss/typography": "^0.5.8",
     "autoprefixer": "^10.4.13",
     "luxon": "^3.2.0",
