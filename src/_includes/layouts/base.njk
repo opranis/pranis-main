@@ -15,9 +15,11 @@ bgClass: bg-black
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="/style.css"/>
-    <link rel="icon" href="/media/logo.png">
+    <link rel="icon" href="{{ site.media }}/logo.png">
 
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <link type="text/css" rel="stylesheet" href="/lightgallery/css/lightgallery.css" />
+
+    {#<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>#}
 
     <title>{{ title }}</title>
 </head>
@@ -25,7 +27,7 @@ bgClass: bg-black
 
     {{content | safe}}
 
-    <script>
+    {#<script>
         {% set js %}
         if (window.netlifyIdentity) {
             window.netlifyIdentity.on("init", user => {
@@ -38,6 +40,6 @@ bgClass: bg-black
         }
         {% endset %}
         {{ js | jsmin | safe }}
-    </script>
+    </script>#}
 </body>
 </html>

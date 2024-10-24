@@ -3,7 +3,7 @@ title: Binario game embedded system
 date: 2022-05-01T06:19:48.758Z
 tags:
   - projects
-thumbnail: /media/post_images/binario.jpg
+thumbnail: binario.jpg
 ---
 This project was done as part of the class following [CPU design](https://opran.is/blog/posts/2022-03-19-8-bit-cpu-from-scratch/) - now we could actually get to know how to use it. It used to be the case that when I had to to a project involving programming, more often than not I would reach toward Python - its wide support and general ease of use mean it is great for various projects. At the same time, it is quite far removed from directly getting the CPU to do your bidding. This class was tremendously helpful in this regard, since all of the programming for it was done in AVR assembly.
 

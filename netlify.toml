@@ -1,7 +1,0 @@
-[build]
-  publish = "_site"
-  command = "npm run build"
-
-[build.environment]
-  NODE_VERSION = "v20.8.1"
-  NPM_VERSION = "10.1.0"

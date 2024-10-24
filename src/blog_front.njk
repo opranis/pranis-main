@@ -9,7 +9,7 @@ pagination:
         - all
 permalink: /blog/tags/{{ tag | slug }}/
 ---
-<div class="max-w-5xl m-auto space-y-5 py-5 px-2 font-montserrat" >
+<div class="max-w-5xl m-auto space-y-5 py-5 px-2 text-my-gray-light font-montserrat" >
 
     {% if tag | filterTags | length %}
     <h1 class="text-4xl">Posts tagged as: <span class="font-sharetech">[{{ tag }}]</span></h1>
@@ -18,26 +18,26 @@ permalink: /blog/tags/{{ tag | slug }}/
     {% set taglist = collections[ tag ] %}
     {% for post in taglist | reverse %}
 
-    <hr class="border-1 border-my-darkgray">
+    <hr class="border-[1px] border-my-gray-dark">
 
     <div class="flex mx-auto flex-row">
-        <img class="bg-my-darkgray shadow-my-yellow border-b-2 border-r-2 border-my-darkgray object-cover h-32 w-44 mx-6 sm:inline-block hidden" src="{{ post.data.thumbnail }}" alt="Post thumbnail image">
+        <img class="bg-my-offwhite shadow-my-yellow border-b-2 border-r-2 border-my-gray-vdark object-cover h-32 w-44 mx-6 sm:inline-block hidden" src="{{ site.media + "/post_images/" + post.data.thumbnail }}" alt="Post thumbnail image">
         <div class="flex flex-col justify-between">
             <div>
                 <h2 class="text-4xl font-sharetech">{{ post.data.title }}</h2>
                 <date datetime="{{ post.data.date | htmlDateString }}">{{ post.data.date | readableDate }}</date>
                 <div>
                     {% for tag in post.data.tags | filterTags -%}
-                    <a class="font-sharetech hover:bg-my-yellow transition duration-200" href="/blog/tags/{{ tag | slugify }}/">[{{ tag }}]</a> 
+                    <a class="font-sharetech hover:bg-my-yellow hover:text-gray-900 transition duration-200" href="/blog/tags/{{ tag | slugify }}/">[{{ tag }}]</a> 
                     {% endfor %}
                 </div>
             </div>
-            <div><a href="{{ post.url }}" class="underline underline-offset-2 decoration-my-darkgray decoration-2 hover:bg-my-yellow transition duration-200">Read more</a></div>
+            <div><a href="{{ post.url }}" class="underline underline-offset-2 decoration-my-gray-light decoration-2 hover:text-gray-900 hover:bg-my-yellow transition duration-200">Read more</a></div>
         </div>
     </div>
 
     {% endfor %}
 
-    <hr class="border-1 border-my-darkgray">
+    <hr class="border-[1px] border-my-gray-dark">
 
 </div>

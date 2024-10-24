@@ -1,13 +1,15 @@
 ---
 layout: layouts/blog.njk
 ---
+<script src="/lightgallery/lightgallery.min.js"></script>
+
 <div class="absolute w-full h-96 -z-10 p-2 hidden md:block">
-    <div class="overflow-hidden w-full h-full shadow-md shadow-my-darkgray bg-gray-300">
-        <img class="blur-md w-full h-full object-cover object-center scale-125" src="{{ thumbnail }}" alt="Post blurred background thumbnail image">
+    <div class="overflow-hidden w-full h-full shadow-md shadow-my-gray-dark bg-gray-300">
+        <img class="blur-md w-full h-full object-cover object-center scale-125" src="{{ site.media + "/post_images/" + thumbnail }}" alt="Post blurred background thumbnail image">
     </div>
 </div>
 <div class="px-6">
-    <img src="{{ thumbnail }}" alt="Post thumbnail image" class="bg-gray-600 shadow-md object-cover max-h-96 min-w-[40%] md:h-96 mt-6 md:mb-16 mb-8 mx-auto rounded-md shadow-my-darkgray" />
+    <img src="{{ site.media + "/post_images/" + thumbnail }}" alt="Post thumbnail image" class="bg-gray-600 shadow-md object-cover max-h-96 min-w-[40%] md:h-96 mt-6 md:mb-16 mb-8 mx-auto rounded-md shadow-my-gray-dark" />
 </div>
 
 <div class="mx-6 mb-14">
@@ -16,16 +18,16 @@ layout: layouts/blog.njk
             <span class="bg-my-yellow text-gray-900 font-sharetech shadow-my-orange p-2 inline-block">{{ title }}</span>
         </h1>
         
-        <div class="mb-7 text-lg">
+        <div class="mb-7 text-lg text-my-gray-light">
             <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
             <p>
                 {%- for tag in tags | filterTags %}
-                <a class="font-sharetech hover:bg-my-yellow transition duration-200" href="/blog/tags/{{ tag | slugify }}/">[{{ tag }}]</a>
+                <a class="font-sharetech hover:bg-my-yellow hover:text-gray-900 transition duration-200" href="/blog/tags/{{ tag | slugify }}/">[{{ tag }}]</a>
                 {%- endfor %}
             </p>
         </div>
 
-        <article class="prose max-w-none prose-img:rounded-xl">
+        <article class="prose prose-stone prose-invert max-w-none prose-img:rounded-xl">
         {{ content | safe }}
         </article>
     </div>

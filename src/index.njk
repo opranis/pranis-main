@@ -7,13 +7,9 @@ layout: layouts/cubes.njk
             oliver pranis
         </a>
     </h1>
-    {# <h2 class="font-montserrat text-black mb-20">
-        <span class="bg-my-yellow decoration-clone p-1">
-            Hello there!<br>I like to explore things.
-        </span>
-    </h2>
+    {#
     <div class="mb-4 md:m-0">
-        <a href="/media/opranis_resume.pdf" target="_blank" class="shadow-my-orange-none hover:shadow-my-orange cursor-pointer
+        <a href="{{ site.media }}/opranis_resume.pdf" target="_blank" class="shadow-my-orange-none hover:shadow-my-orange cursor-pointer
         inline-block focus:outline-none transition duration-300 hover:bg-my-yellow hover:text-black border-my-yellow
         border-4 bg-black font-sharetech text-my-yellow text-lg p-2">
             resume
@@ -42,16 +38,17 @@ layout: layouts/cubes.njk
         <div class="p-4 md:p-8 md:text-lg font-montserrat md:flex flex-col justify-center h-full">
             <h1 class="font-sharetech text-lg md:text-xl pb-6">Hello, glad to have you here!</h1>
             <p class="pb-6">
-                I'm Oliver - a fourth-year Electrical Engineering student at California Insitute of Technology, interested in digital and analog design.
+                I'm Oliver, a first-year PhD student at <a href="https://www.radioglaciology.com/" target="_blank" class="font-sharetech hover:bg-black hover:text-my-yellow transition duration-200 text-nowrap">[Stanford Radio Glaciology]</a> group.
             </p>
             <p class="pb-6">
-                You can read a bit more about my experience on my <a href="/media/opranis_resume.pdf" target="_blank" class="font-sharetech hover:bg-black hover:text-my-yellow transition duration-200">[resume]</a>.
+                You can read a bit more about my experience on my <a href="{{ site.media }}/opranis_resume.pdf" target="_blank" class="font-sharetech hover:bg-black hover:text-my-yellow transition duration-200">[resume]</a>.
             </p>
             <p>
                 My projects and other writings should occasionally end up on the <a href="/blog/tags/posts/" class="font-sharetech hover:bg-black hover:text-my-yellow transition duration-200">[blog]</a>.
             </p>
         </div>
-    </div> #}
+    </div>
+    #}
     <div class="flex md:justify-start justify-center gap-x-3">
         <a aria-label="Email" href="mailto:oliver.pranis@gmail.com" class="shadow-my-orange-none hover:shadow-my-orange cursor-pointer inline-block focus:outline-none transition duration-300 hover:bg-my-yellow hover:text-black border-my-yellow border-4 bg-black font-sharetech text-my-yellow p-2">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-4 h-4">

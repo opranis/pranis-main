@@ -3,7 +3,7 @@ title: 8-bit CPU from scratch
 date: 2022-03-19T14:34:28.403Z
 tags:
   - projects
-thumbnail: /media/post_images/logicgates.jpg
+thumbnail: logicgates.jpg
 ---
 Not that long ago, the CPU always seemed as almost a black box. Sure, I knew roughly what it *does*, but *how exactly* does it go about it seemed a complete mystery. I am glad to say that has changed now.
 
