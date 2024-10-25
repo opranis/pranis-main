@@ -1,3 +1,7 @@
+---
+layout: layouts/base.njk
+bgClass: bg-my-gray-vdark
+---
 <header>
     <nav class="bg-my-gray-dark flex flex-wrap text-white justify-between items-center p-3">
         <a href="/" class="group p-1 m-1 sm:m-0 font-sharetech text-my-yellow sm:flex inline-block items-center  hover:shadow-my-orange transition duration-300 cursor-pointer hover:bg-my-yellow hover:text-gray-900">
@@ -45,3 +49,4 @@
     {% endset %}
     {{ js | jsmin | safe }}
 </script>
+{{ content | safe }}

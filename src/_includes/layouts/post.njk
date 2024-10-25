@@ -1,5 +1,5 @@
 ---
-layout: layouts/blog.njk
+layout: layouts/base_with_header.njk
 ---
 <script src="/lightgallery/lightgallery.min.js"></script>
 
@@ -27,7 +27,7 @@ layout: layouts/blog.njk
             </p>
         </div>
 
-        <article class="prose prose-stone prose-invert max-w-none prose-img:rounded-xl">
+        <article class="prose prose-stone prose-invert max-w-none prose-img:rounded-xl prose-a:decoration-my-yellow hover:prose-a:bg-my-yellow hover:prose-a:text-my-gray-vdark prose-a:transition prose-a:duration-200">
         {{ content | safe }}
         </article>
     </div>

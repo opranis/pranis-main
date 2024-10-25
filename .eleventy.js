@@ -53,7 +53,7 @@ module.exports = function (eleventyConfig) {
         return `
             <a href="${img}" class="flex aspect-square border-[6px] rounded-sm  transition duration-300
             border-my-offwhite hover:shadow-my-orange hover:border-my-yellow">
-                <img alt="${desc}" src="${img}" class="h-full object-cover"/>
+                <img alt="${desc}" src="${img}" class="min-h-full min-w-full object-cover"/>
             </a>
         `.replace(/(\r\n|\n|\r)/gm, "");
     });

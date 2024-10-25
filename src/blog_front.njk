@@ -1,5 +1,5 @@
 ---
-layout: layouts/blog.njk
+layout: layouts/base_with_header.njk
 pagination:
     data: collections
     size: 1
@@ -20,11 +20,15 @@ permalink: /blog/tags/{{ tag | slug }}/
 
     <hr class="border-[1px] border-my-gray-dark">
 
-    <div class="flex mx-auto flex-row">
-        <img class="bg-my-offwhite shadow-my-yellow border-b-2 border-r-2 border-my-gray-vdark object-cover h-32 w-44 mx-6 sm:inline-block hidden" src="{{ site.media + "/post_images/" + post.data.thumbnail }}" alt="Post thumbnail image">
+    <div class="flex mx-auto sm:flex-row flex-col sm:px-0 px-4">
+        <a href="{{ post.url }}" class="sm:mx-6 sm:mb-0 mb-6 shrink-0 sm:h-36 sm:w-44 max-h-60 w-full self-center flex hover:shadow-my-orange transition duration-300 bg-my-yellow shadow-my-yellow border-b-2 border-r-2 hover:border-my-yellow border-my-gray-vdark">
+            <img class="min-h-full min-w-full object-cover" src="{{ site.media + "/post_images/" + post.data.thumbnail }}" alt="Post thumbnail image">
+        </a>
         <div class="flex flex-col justify-between">
-            <div>
-                <h2 class="text-4xl font-sharetech">{{ post.data.title }}</h2>
+            <a href="{{ post.url }}">
+                <h2 class="text-4xl font-sharetech transition duration-300 hover:text-my-gray-vdark hover:shadow-my-orange hover:bg-my-yellow">{{ post.data.title }}</h2>
+            </a>
+            <div class="my-1">
                 <date datetime="{{ post.data.date | htmlDateString }}">{{ post.data.date | readableDate }}</date>
                 <div>
                     {% for tag in post.data.tags | filterTags -%}
@@ -32,7 +36,7 @@ permalink: /blog/tags/{{ tag | slug }}/
                     {% endfor %}
                 </div>
             </div>
-            <div><a href="{{ post.url }}" class="underline underline-offset-2 decoration-my-gray-light decoration-2 hover:text-gray-900 hover:bg-my-yellow transition duration-200">Read more</a></div>
+            <div><a href="{{ post.url }}" class="underline underline-offset-2 decoration-my-yellow decoration-2 hover:text-gray-900 hover:bg-my-yellow transition duration-200">Read more</a></div>
         </div>
     </div>
 

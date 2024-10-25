@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "eleventy --serve && postcss tailwind.css -o _tmp/style.css --watch --verbose",
+    "start": "eleventy --serve",
+    "postcss": "postcss tailwind.css -o _tmp/style.css --verbose",
     "prebuild": "rm -rf ./_site",
     "build": "eleventy && NODE_ENV=production postcss tailwind.css -o _site/style.css --verbose"
   },
